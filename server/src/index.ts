@@ -4,7 +4,7 @@ import http from 'http';
 import { Server } from "socket.io";
 import { GamepadManager } from './room/gamepadmanager';
 
-const port = 3005
+const port = 3007
 
 const app = express()
 app.use(cors)
@@ -27,5 +27,5 @@ io.on("connection", (socket) => {
       })
 })
 server.listen(port, () => {
-      console.log("listening to server")
+      console.log("listening to server",port)
 })

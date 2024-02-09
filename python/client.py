@@ -6,7 +6,7 @@ sio = socketio.AsyncClient(logger=True, engineio_logger=True)
 
 
 async def main():
-    await sio.connect('http://192.168.9.102:3005', transports=['websocket', 'polling', 'flashsocket'])
+    await sio.connect('http://192.168.214.161:3007', transports=['websocket', 'polling'])
     
     await sio.wait()
 
@@ -25,6 +25,7 @@ async def disconnect():
 @sio.on('gamepad_receiver')
 async def gamepad_receiver(data):
     print(data)
+    await sio.emit('reply', data)
 
 
 if __name__ == '__main__':
