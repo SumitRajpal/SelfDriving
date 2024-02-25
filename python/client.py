@@ -6,7 +6,7 @@ sio = socketio.AsyncClient(logger=True, engineio_logger=True)
 
 
 async def main():
-    await sio.connect('http://192.168.214.161:3007', transports=['websocket', 'polling'])
+    await sio.connect('http://192.168.224.161:3007', transports=['websocket', 'polling'])
     
     await sio.wait()
 
